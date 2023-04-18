@@ -34,7 +34,7 @@ export const downloadEpisodeMetaFn = async(url: string, outDir?: string) => {
   if(!patchedEdgePlayer)
     await browser.browser.close();
   const episodeMetaCollection: EpisodeMeta[] = await page.evaluate(async () => {
-    async function SleepAsync(ms= 2000) {
+    async function SleepAsync(ms= 100) {
       return new Promise(res => {
         setTimeout(() => {
           res(true);
